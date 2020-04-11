@@ -14,6 +14,7 @@ class ThumbnailCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
 
         setCollection()
+        setFooterComponent()
         fetchPhotoData(page: self.page, perPage: self.perPage)
     }
     
@@ -28,7 +29,9 @@ class ThumbnailCollectionViewController: UICollectionViewController {
         flow.minimumInteritemSpacing = 0
         flow.itemSize = CGSize(width: collectionView.frame.width/4, height: collectionView.frame.width/4)
         flow.footerReferenceSize = CGSize(width: collectionView.frame.width, height: 40)
-        
+    }
+    
+    func setFooterComponent() {
         self.activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: self.collectionView.frame.width, height: 40))
         
         self.endOfScrollLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.collectionView.frame.width, height: 40))
@@ -67,15 +70,15 @@ class ThumbnailCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = self.collectionView.cellForItem(at: indexPath) as! ThumbnailCollectionViewCell
         let photo = photoListManager.container[indexPath.row]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        //
         self.selectedIndexPath = indexPath
-        //
         
         if let vc = storyboard.instantiateViewController(identifier: "PhotoPage") as? PhotoDetailViewController {
             vc.photo = photo
+            vc.thumbnailImage = cell.thumbnailImage.image
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -95,7 +98,7 @@ class ThumbnailCollectionViewController: UICollectionViewController {
     // MARK: Request
     func fetchNextPage() {
         self.page += 1
-//        self.fetchPhotoData(page: self.page, perPage: self.perPage)
+        self.fetchPhotoData(page: self.page, perPage: self.perPage)
     }
     
     func fetchPhotoData(page: Int, perPage: Int) {
@@ -109,16 +112,15 @@ class ThumbnailCollectionViewController: UICollectionViewController {
             }
             
             let insertIndexPaths = Array(start..<end).map { IndexPath(item: $0, section: 0) }
+            
             self.collectionView.performBatchUpdates({
                 self.collectionView.insertItems(at: insertIndexPaths)
                 self.activityIndicator.stopAnimating()
             }, completion: nil)
-            
-            
         }
     }
     
-    // Helper
+    // MARK: - Helper
     func isEndOfScroll(row: Int) -> Bool {
         return row >= (photoListManager.container.count - 1)
     }

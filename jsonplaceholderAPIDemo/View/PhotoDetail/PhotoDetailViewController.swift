@@ -6,13 +6,14 @@ class PhotoDetailViewController: UIViewController {
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     var photo: PhotoListCellViewModel?
+    var thumbnailImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         guard let data = photo else { fatalError("photo is nil") }
         
-        self.photoImageView.image = UIImage(named: "default_image")
+        self.photoImageView.image = thumbnailImage
         self.photoImageView.setImage(url: data.url)
         
         self.idLabel.text = "ID: \(data.id)"

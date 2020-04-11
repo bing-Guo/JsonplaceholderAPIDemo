@@ -14,7 +14,6 @@ class ViewController: UIViewController {
         if let vc = storyboard.instantiateViewController(identifier: "ThumbnailCollectionPage") as? ThumbnailCollectionViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
-        
     }
 }
 

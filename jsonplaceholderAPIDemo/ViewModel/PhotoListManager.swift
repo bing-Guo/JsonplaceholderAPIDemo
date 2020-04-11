@@ -1,7 +1,7 @@
 import Foundation
 
 class PhotoListManager {
-    private let photoService = FakePhotoService()
+    private let photoService = PhotoService()
     var container = [PhotoListCellViewModel]()
     
     func fetchData(page: Int, perPage: Int, complete: @escaping ([PhotoListCellViewModel], Int, Int, Bool) -> Void) {

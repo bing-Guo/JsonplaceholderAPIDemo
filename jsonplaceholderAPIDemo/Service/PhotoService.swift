@@ -21,6 +21,7 @@ class PhotoService: PhotoServiceProtocol {
             "_limit": perPage,
             "_page": page
         ]
+        
         service.getRequest(urlString: PhotoRoute.photos.absoluteUrlString(),
                            parameter: param,
                            complete: networkComplete)
