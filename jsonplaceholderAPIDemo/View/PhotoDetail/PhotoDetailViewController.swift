@@ -10,14 +10,37 @@ class PhotoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.titleLabel.numberOfLines = 0
-        
         guard let data = photo else { fatalError("photo is nil") }
-        
-        self.idLabel.text = "ID: \(data.id)"
-        self.titleLabel.text = "Title: \(data.title)"
         
         self.photoImageView.image = UIImage(named: "default_image")
         self.photoImageView.setImage(url: data.url)
+        
+        self.idLabel.text = "ID: \(data.id)"
+        self.titleLabel.text = "Title: \(data.title)"
+        self.titleLabel.numberOfLines = 0
+        self.idLabel.alpha = 0
+        self.titleLabel.alpha = 0
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 0.2, delay: 0.2, options: [], animations: {
+            self.idLabel.alpha = 1
+            self.titleLabel.alpha = 1
+        }, completion: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.idLabel.alpha = 0
+        self.titleLabel.alpha = 0
+    }
+}
+
+extension PhotoDetailViewController: ZoomingViewController {
+    func zoomingImageView(for transition: ZoomTransitioningDelegate) -> UIImageView? {
+        return photoImageView
+    }
+    
+    func zoomingBackgroundView(for tansition: ZoomTransitioningDelegate) -> UIView? {
+        return nil
     }
 }

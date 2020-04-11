@@ -23,7 +23,7 @@
 		FC2CD441243D9B4B00A1FA36 /* fakeResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = FC2CD440243D9B4B00A1FA36 /* fakeResponse.json */; };
 		FC2CD445243D9CC100A1FA36 /* ThumbnailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2CD443243D9CC100A1FA36 /* ThumbnailCollectionViewCell.swift */; };
 		FC2CD448243D9F8100A1FA36 /* ThumbnailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC2CD447243D9F8100A1FA36 /* ThumbnailCollectionViewCell.xib */; };
-		FC2CD44B243DA15200A1FA36 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2CD44A243DA15200A1FA36 /* UIImage+Ext.swift */; };
+		FC2CD44B243DA15200A1FA36 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2CD44A243DA15200A1FA36 /* UIImageView+Ext.swift */; };
 		FC2CD44E243DB6A100A1FA36 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2CD44D243DB6A100A1FA36 /* PhotoDetailViewController.swift */; };
 		FC2CD452243DDD4C00A1FA36 /* PhotoListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2CD451243DDD4C00A1FA36 /* PhotoListManager.swift */; };
 		FC2CD45524417ECF00A1FA36 /* ZoomTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2CD45424417ECF00A1FA36 /* ZoomTransitioningDelegate.swift */; };
@@ -48,7 +48,7 @@
 		FC2CD440243D9B4B00A1FA36 /* fakeResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = fakeResponse.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		FC2CD443243D9CC100A1FA36 /* ThumbnailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCollectionViewCell.swift; sourceTree = "<group>"; };
 		FC2CD447243D9F8100A1FA36 /* ThumbnailCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThumbnailCollectionViewCell.xib; sourceTree = "<group>"; };
-		FC2CD44A243DA15200A1FA36 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		FC2CD44A243DA15200A1FA36 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		FC2CD44D243DB6A100A1FA36 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		FC2CD451243DDD4C00A1FA36 /* PhotoListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListManager.swift; sourceTree = "<group>"; };
 		FC2CD45424417ECF00A1FA36 /* ZoomTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomTransitioningDelegate.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 		FC2CD449243DA13200A1FA36 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				FC2CD44A243DA15200A1FA36 /* UIImage+Ext.swift */,
+				FC2CD44A243DA15200A1FA36 /* UIImageView+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -266,7 +266,7 @@
 				FC2CD438243D7F7B00A1FA36 /* PhotoRoute.swift in Sources */,
 				FC2CD42F243D7CFC00A1FA36 /* Photo.swift in Sources */,
 				FC2CD416243D71E500A1FA36 /* AppDelegate.swift in Sources */,
-				FC2CD44B243DA15200A1FA36 /* UIImage+Ext.swift in Sources */,
+				FC2CD44B243DA15200A1FA36 /* UIImageView+Ext.swift in Sources */,
 				FC2CD445243D9CC100A1FA36 /* ThumbnailCollectionViewCell.swift in Sources */,
 				FC2CD418243D71E500A1FA36 /* SceneDelegate.swift in Sources */,
 			);

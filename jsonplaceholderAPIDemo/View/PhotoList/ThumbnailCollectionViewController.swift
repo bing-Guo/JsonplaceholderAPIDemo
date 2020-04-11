@@ -3,6 +3,7 @@ import UIKit
 class ThumbnailCollectionViewController: UICollectionViewController {
     private let perPage = 12
     private var page = 1
+    var selectedIndexPath: IndexPath!
     
     var activityIndicator: UIActivityIndicatorView!
     var endOfScrollLabel: UILabel!
@@ -69,6 +70,10 @@ class ThumbnailCollectionViewController: UICollectionViewController {
         let photo = photoListManager.container[indexPath.row]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
+        //
+        self.selectedIndexPath = indexPath
+        //
+        
         if let vc = storyboard.instantiateViewController(identifier: "PhotoPage") as? PhotoDetailViewController {
             vc.photo = photo
             self.navigationController?.pushViewController(vc, animated: true)
@@ -90,7 +95,7 @@ class ThumbnailCollectionViewController: UICollectionViewController {
     // MARK: Request
     func fetchNextPage() {
         self.page += 1
-        self.fetchPhotoData(page: self.page, perPage: self.perPage)
+//        self.fetchPhotoData(page: self.page, perPage: self.perPage)
     }
     
     func fetchPhotoData(page: Int, perPage: Int) {
@@ -116,5 +121,19 @@ class ThumbnailCollectionViewController: UICollectionViewController {
     // Helper
     func isEndOfScroll(row: Int) -> Bool {
         return row >= (photoListManager.container.count - 1)
+    }
+}
+
+extension ThumbnailCollectionViewController: ZoomingViewController {
+    func zoomingImageView(for transition: ZoomTransitioningDelegate) -> UIImageView? {
+        if let indexPath = selectedIndexPath {
+            let cell = collectionView.cellForItem(at: indexPath) as! ThumbnailCollectionViewCell
+            return cell.thumbnailImage
+        }
+        return nil
+    }
+    
+    func zoomingBackgroundView(for tansition: ZoomTransitioningDelegate) -> UIView? {
+        return nil
     }
 }
