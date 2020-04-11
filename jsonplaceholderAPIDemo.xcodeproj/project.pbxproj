@@ -26,6 +26,7 @@
 		FC2CD44B243DA15200A1FA36 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2CD44A243DA15200A1FA36 /* UIImage+Ext.swift */; };
 		FC2CD44E243DB6A100A1FA36 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2CD44D243DB6A100A1FA36 /* PhotoDetailViewController.swift */; };
 		FC2CD452243DDD4C00A1FA36 /* PhotoListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2CD451243DDD4C00A1FA36 /* PhotoListManager.swift */; };
+		FC2CD45524417ECF00A1FA36 /* ZoomTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2CD45424417ECF00A1FA36 /* ZoomTransitioningDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		FC2CD44A243DA15200A1FA36 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		FC2CD44D243DB6A100A1FA36 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		FC2CD451243DDD4C00A1FA36 /* PhotoListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListManager.swift; sourceTree = "<group>"; };
+		FC2CD45424417ECF00A1FA36 /* ZoomTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomTransitioningDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		FC2CD42B243D7CAE00A1FA36 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FC2CD45324417EA700A1FA36 /* Transation */,
 				FC2CD44C243DB67F00A1FA36 /* PhotoDetail */,
 				FC2CD442243D9C9100A1FA36 /* PhotoList */,
 				FC2CD419243D71E500A1FA36 /* ViewController.swift */,
@@ -168,6 +171,14 @@
 				FC2CD44D243DB6A100A1FA36 /* PhotoDetailViewController.swift */,
 			);
 			path = PhotoDetail;
+			sourceTree = "<group>";
+		};
+		FC2CD45324417EA700A1FA36 /* Transation */ = {
+			isa = PBXGroup;
+			children = (
+				FC2CD45424417ECF00A1FA36 /* ZoomTransitioningDelegate.swift */,
+			);
+			path = Transation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +262,7 @@
 				FC2CD431243D7DE300A1FA36 /* PhotoViewModel.swift in Sources */,
 				FC2CD44E243DB6A100A1FA36 /* PhotoDetailViewController.swift in Sources */,
 				FC2CD42A243D7C4900A1FA36 /* ThumbnailCollectionViewController.swift in Sources */,
+				FC2CD45524417ECF00A1FA36 /* ZoomTransitioningDelegate.swift in Sources */,
 				FC2CD438243D7F7B00A1FA36 /* PhotoRoute.swift in Sources */,
 				FC2CD42F243D7CFC00A1FA36 /* Photo.swift in Sources */,
 				FC2CD416243D71E500A1FA36 /* AppDelegate.swift in Sources */,
