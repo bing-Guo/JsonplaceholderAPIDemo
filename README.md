@@ -9,3 +9,4 @@
 * Cell for reuse: reuse cel前先清空重置cell
 * Activity indicator: 等待API回應前，呈現載入中樣式
 * End of scroll: 滾到最底會呈現結束字樣
+* Transition: 縮圖開啟詳細頁面時，以自訂的轉場特效替換預設效果，到了詳細頁面下方的字延遲出現，這樣比較不突兀，另外，會先用縮圖代替，等到圖片下載完畢後再替換成正常大小圖片。
